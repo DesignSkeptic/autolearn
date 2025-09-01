@@ -450,6 +450,18 @@ async function injectContentScriptsIntoExistingTabs() {
 initialize();
 
 /**
+ * Handles extension installation to open the how-to-use page
+ */
+chrome.runtime.onInstalled.addListener((details) => {
+  // Open the how-to-use page when the extension is installed or updated
+  if (details.reason === 'install' || details.reason === 'update') {
+    const settingsUrl = chrome.runtime.getURL("/settings/index.html");
+    console.log("Extension installed/updated, opening how-to-use page at:", settingsUrl);
+    chrome.tabs.create({ url: settingsUrl });
+  }
+});
+
+/**
  * Handles extension icon clicks to open the settings page
  */
 chrome.action.onClicked.addListener((tab) => {

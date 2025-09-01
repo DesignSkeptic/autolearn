@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Add functionality for "Go to Settings" button in step 1
+  const goToSettingsButton = document.getElementById('go-to-settings');
+  if (goToSettingsButton) {
+    goToSettingsButton.addEventListener('click', () => {
+      // Update active nav button to settings
+      navButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector('[data-page="settings"]').classList.add('active');
+      
+      // Show settings page
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById('settings-page').classList.add('active');
+    });
+  }
+
   /**
    * Retrieve and display the current extension version from manifest
    */
