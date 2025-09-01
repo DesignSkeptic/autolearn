@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoLearn Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-wrapper">
+        <aside class="sidebar">
+          <div class="sidebar-content card-container">
+            <div class="sidebar-header">
+              <div class="header-content">
+                <img src="../assets/icon.png" alt="AutoLearn Logo" class="logo" />
+                <div class="title-section">
+                  <h1>AutoLearn Settings</h1>
+                  <p class="subtitle">Configure your AI learning assistant</p>
+                </div>
+              </div>
+
+            </div>
+            
+            <nav class="sidebar-nav">
+              <button class="nav-button active" data-page="how-to-use">How to Use</button>
+              <button class="nav-button" data-page="settings">Settings</button>
+              <button class="nav-button" data-page="advanced">Advanced</button>
+              <button class="nav-button" data-page="troubleshooting">Troubleshooting</button>
+            </nav>
+            
+            <footer class="sidebar-footer">
+              <div class="footer-content">
+                <div class="footer-info">
+                  <p>AutoLearn <span id="footer-version">v2</span> by GooglyBlox | MIT License</p>
+                  <div class="version-info">
+                    <div class="version-row">
+                      <span class="version-label">Current:</span>
+                      <span id="current-version">v2.0</span>
+                      <span class="version-separator">|</span>
+                      <span class="version-label">Latest:</span>
+                      <span id="latest-version">Checking...</span>
+                    </div>
+                    <div class="version-status-row">
+                      <div id="version-status">Checking for updates...</div>
+                      <button id="check-updates" class="update-button">Check Updates</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-links">
+                  <a href="https://github.com/GooglyBlox/autolearn" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </footer>
+            
+            <div class="sidebar-disclaimer">
+              <p><strong>Important Disclaimer:</strong> This extension is designed to work only with websites that explicitly allow
+                browser extensions to interact with their content. Please ensure you have permission to use this extension on your
+                chosen website and do not attempt to circumvent any website's terms of service or security measures.</p>
+            </div>
+          </div>
+        </aside>
+
+        <main>
+          <div id="settings-page" class="page-content">
+            <div class="settings-grid">
+              <div class="settings-section">
+                <h2>Website Configuration</h2>
+                <p>Configure the textbook website you want to use with AutoLearn.</p>
+                
+                <div class="website-settings">
+                  <div class="setting-item">
+                    <div class="setting-details">
+                      <h3>Textbook Website</h3>
+                      <p>Enter the middle part of your textbook URL (e.g., for learning.textbook.com, enter "textbook")</p>
+                    </div>
+                    <div class="website-input">
+                      <input type="text" id="website-url" placeholder="textbook" />
+                      <button id="save-website" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="settings-section">
+                <h2>AI Assistant</h2>
+                <p>
+                  Select which AI assistant to use for answering your textbook questions.
+                </p>
+
+                <div class="model-selector">
+                  <button id="chatgpt" class="model-button active">
+                    <div class="model-details">
+                      <h3>ChatGPT</h3>
+                      <p>OpenAI's ChatGPT model</p>
+                    </div>
+                    <a href="https://chatgpt.com/" target="_blank" class="open-tab-button">Open in new tab</a>
+                  </button>
+
+                  <button id="gemini" class="model-button">
+                    <div class="model-details">
+                      <h3>Gemini</h3>
+                      <p>Google's Gemini model</p>
+                    </div>
+                    <a href="https://gemini.google.com/" target="_blank" class="open-tab-button">Open in new tab</a>
+                  </button>
+
+                  <button id="deepseek" class="model-button">
+                    <div class="model-details">
+                      <h3>DeepSeek</h3>
+                      <p>DeepSeek's AI model</p>
+                    </div>
+                    <a href="https://chat.deepseek.com/" target="_blank" class="open-tab-button">Open in new tab</a>
+                  </button>
+                </div>
+                
+                <div class="ai-status-message">
+                  <div id="status-message">Checking assistant availability...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="advanced-page" class="page-content">
+            <div class="settings-grid">
+              <div class="settings-section">
+                <h2>Automation Settings</h2>
+                <p>Configure how the automation behaves between questions.</p>
+                
+                <div class="automation-settings">
+                  <div class="setting-item">
+                    <div class="delay-setting">
+                      <div class="setting-details">
+                        <h3>Random Delay</h3>
+                        <p>Set custom minimum and maximum delay times between questions. Use 0 for both to disable delays.</p>
+                      </div>
+                      <div class="delay-inputs">
+                        <div class="input-group">
+                          <label for="min-delay">Min (seconds):</label>
+                          <input type="number" id="min-delay" min="0" max="3600" value="22" placeholder="22" />
+                        </div>
+                        <div class="input-group">
+                          <label for="max-delay">Max (seconds):</label>
+                          <input type="number" id="max-delay" min="0" max="3600" value="97" placeholder="97" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="setting-item turbo-mode-item">
+                    <div class="turbo-setting">
+                      <div class="setting-details">
+                        <h3>⚡ Turbo Mode</h3>
+                        <p>Bypasses all delays and timers for maximum speed. <strong>Not recommended</strong> - may be easily detected by websites.</p>
+                      </div>
+                      <div class="turbo-controls">
+                        <div class="checkbox-group">
+                          <input type="checkbox" id="turbo-mode" />
+                          <label for="turbo-mode">Enable Turbo Mode</label>
+                        </div>
+                        <div class="turbo-disclaimer">
+                          <div class="turbo-disclaimer-icon">⚠️</div>
+                          <div class="turbo-disclaimer-text">
+                            <strong>Warning:</strong> This mode removes all delays and may trigger detection. Use at your own risk.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="how-to-use-page" class="page-content active">
+            <div class="how-to-use-container">
+              <div class="settings-section">
+                <h2 class="how-to-use-title">🚀 Using AutoLearn</h2>
+                <p class="how-to-use-subtitle">Quick guide to using your textbook automation extension.</p>
+                
+                <div class="step-guide">
+                  <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h3>Setup</h3>
+                      <p><strong>Settings tab:</strong> Enter your textbook domain (e.g., enter <code>textbook</code> for <code>learning.textbook.com</code>)</p>
+                      <p><strong>AI Selection:</strong> Choose ChatGPT, Gemini, or DeepSeek and open it in another tab</p>
+                    </div>
+                  </div>
+                  
+                  <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h3>Starting Automation</h3>
+                      <p>Go to your textbook assignment and click <strong>"Ask [AI Model]"</strong> in the header</p>
+                      <p>Click <strong>"Stop Automation"</strong> at any time to pause</p>
+                    </div>
+                  </div>
+                  
+                  <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h3>Question Handling</h3>
+                      <p><strong>Automatic:</strong> Multiple choice, True/False, Fill-in-blank, Multiple select</p>
+                      <p><strong>Manual needed:</strong> For matching questions, you'll see AI suggestions but need to drag-drop manually</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="troubleshooting-page" class="page-content">
+            <div class="settings-grid">
+              <div class="settings-section">
+                <h2 class="troubleshooting-title">🔍 Troubleshooting</h2>
+                <p>Solutions for common issues you might encounter when using AutoLearn.</p>
+                
+                <div class="troubleshooting-list">
+                  <div class="trouble-item">
+                    <h4>❌ "Please open [AI] in another tab" error</h4>
+                    <p><strong>Fix:</strong> Open your selected AI assistant in a new tab and log in. Refresh the AI chat page and try again.</p>
+                  </div>
+                  
+                  <div class="trouble-item">
+                    <h4>⏸️ Automation stops working</h4>
+                    <p><strong>Fix:</strong> Check if AI tab is still open and logged in; refresh both tabs and restart</p>
+                  </div>
+                  
+                  <div class="trouble-item">
+                    <h4>🔄 Wrong answers</h4>
+                    <p><strong>Fix:</strong> Try a different AI assistant or clear your AI chat history</p>
+                  </div>
+                  
+                  <div class="trouble-item">
+                    <h4>🚀 Button not appearing</h4>
+                    <p><strong>Fix:</strong> Verify textbook website setting matches your URL. Refresh the page and try again. If the button still doesn't appear, disable all other extensions and try again.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        
+        
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

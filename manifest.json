@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "AutoLearn",
+  "version": "2.0",
+  "description": "Transfers a question from your online textbook to AI assistants and then uses their response to auto‐select an answer.",
+  "permissions": ["tabs", "scripting", "storage", "activeTab"],
+  "host_permissions": [
+    "https://*/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://deepseek.chat/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "icons": {
+    "48": "assets/icon.png"
+  },
+  "action": {
+    "default_icon": "assets/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content-scripts/chatgpt.js"]
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content-scripts/gemini.js"]
+    },
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["content-scripts/deepseek.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "settings/index.html",
+        "settings/styles.css",
+        "settings/script.js",
+        "assets/icon.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
