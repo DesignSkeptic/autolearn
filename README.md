@@ -61,3 +61,7 @@ This tool is for educational purposes only and is designed to work only with web
 ## Issues
 
 Found a bug? [Create an issue](https://github.com/DesignSkeptic/autolearn/issues).
+
+## Credits
+
+This project was orginally created by [GooglyBlox](https://github.com/GooglyBlox). If this project helped you then consider buying them a coffee at [Kofi](https://ko-fi.com/googlyblox). 
