@@ -643,7 +643,6 @@ function processChatGPTResponse(responseText) {
           input.dispatchEvent(new Event("input", { bubbles: true }));
         }
       });
-      return;
     }
     
     // Handle multiple choice and checkbox questions
