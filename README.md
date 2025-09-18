@@ -27,13 +27,14 @@ _Automate your online textbook homework with AI integration (ChatGPT, Gemini & D
 ## Usage
 
 1. Log into your textbook account and open a textbook assignment
-2. Log into one of the supported AI assistants in another tab:
+2. Input the missing part of the link into the extention settings so if the link is (https://learning.textbook.com/) then input the word textbook into the settings page
+3. Log into one of the supported AI assistants in another tab:
    - [ChatGPT](https://chatgpt.com)
    - [Gemini](https://gemini.google.com)
    - [DeepSeek](https://chat.deepseek.com)
-3. Click the "Ask [AI Model]" button that appears in your textbook header
-4. Click "OK" when prompted to begin automation
-5. Watch as the extension:
+4. Click the "Ask [AI Model]" button that appears in your textbook header
+5. Click "OK" when prompted to begin automation
+6. Watch as the extension:
    - Sends questions to your chosen AI assistant
    - Processes the responses
    - Automatically fills in answers
