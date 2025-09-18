@@ -255,7 +255,7 @@ async function checkForUpdates() {
       latestVersionElement.textContent = "Checking...";
 
       const response = await fetch(
-        "https://api.github.com/repos/GooglyBlox/autolearn/releases/latest"
+        "https://api.github.com/repos/DesignSkeptic/autolearn/releases/latest"
       );
 
       if (!response.ok) {

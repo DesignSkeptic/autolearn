@@ -4,9 +4,9 @@
 
 <img src="assets/icon.png" alt="AutoLearn Logo" width="200">
 
-[![Release](https://img.shields.io/github/v/release/GooglyBlox/autolearn?include_prereleases&style=flat-square&cache=1)](https://github.com/GooglyBlox/autolearn/releases)
-[![License](https://img.shields.io/github/license/GooglyBlox/autolearn?style=flat-square&cache=1)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/GooglyBlox/autolearn?style=flat-square&cache=1)](https://github.com/GooglyBlox/autolearn/issues)
+[![Release](https://img.shields.io/github/v/release/DesignSkeptic/autolearn?include_prereleases&style=flat-square&cache=1)](https://github.com/DesignSkeptic/autolearn/releases)
+[![License](https://img.shields.io/github/license/DesignSkeptic/autolearn?style=flat-square&cache=1)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/DesignSkeptic/autolearn?style=flat-square&cache=1)](https://github.com/DesignSkeptic/autolearn/issues)
 
 _Automate your online textbook homework with AI integration (ChatGPT, Gemini & DeepSeek)_
 
@@ -18,7 +18,7 @@ _Automate your online textbook homework with AI integration (ChatGPT, Gemini & D
 
 ## Installation
 
-1. Download the latest zip from the [releases page](https://github.com/GooglyBlox/autolearn/releases)
+1. Download the latest zip from the [releases page](https://github.com/DesignSkeptic/autolearn/releases)
 2. Extract the zip file to a folder
 3. Open Chrome and go to `chrome://extensions/`
 4. Enable "Developer mode" in the top right
@@ -60,4 +60,4 @@ This tool is for educational purposes only and is designed to work only with web
 
 ## Issues
 
-Found a bug? [Create an issue](https://github.com/GooglyBlox/autolearn/issues).
+Found a bug? [Create an issue](https://github.com/DesignSkeptic/autolearn/issues).
